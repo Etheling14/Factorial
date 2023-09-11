@@ -8,7 +8,13 @@ do
     var n = RequestInt("n? ");
     var fact = Factorial(n);
     Console.WriteLine($"{n}! = {fact}");
+    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.WriteLine($"------------------------");
+    Console.ForegroundColor = ConsoleColor.White;
     next = RequestBool("Do you want to calculate another factorial [y/n]? ");
+    Console.ForegroundColor = ConsoleColor.Magenta;
+    Console.WriteLine($"------------------------");
+    Console.ForegroundColor = ConsoleColor.White;
 } while(next);
 
 bool RequestBool(string message)
@@ -24,8 +30,24 @@ bool RequestBool(string message)
 
 double Factorial(int n)
 {
-    // Implement yor logic here
-    return 0;
+    double factorial = n;
+if (factorial > 0)
+    {
+        for (int x = n - 1; x > 0; x--)
+        {
+            factorial = factorial * x;
+        }
+        return factorial;
+    }
+    else
+    {
+        for (int x = n + 1; x < 0; x++)
+        {
+            factorial = factorial * x;
+        }
+        return factorial;
+    }
+    
 }
 
 int RequestInt(string message)
